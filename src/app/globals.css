@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #050505;
+  --color-cosmic: #12041E;
+  --color-gold: #E6B85C;
+  --color-gold-dark: #B38F3E;
+  --color-violet-light: #7E5BEF;
+  --color-violet-dark: #4A2E80;
+  
+  --font-sans: var(--font-sans), sans-serif;
+  --font-serif: var(--font-serif), serif;
+  
+  --animate-spin-slow: spin 45s linear infinite;
+  --animate-spin-reverse: spin-reverse 35s linear infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-scan: scan 2.5s ease-in-out infinite;
+  --animate-sparkle: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+}
+
+@keyframes scan {
+  0%, 100% {
+    top: 5%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 95%;
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom premium classes */
+.cosmic-bg {
+  background: radial-gradient(circle at 50% 50%, #170727 0%, #0c0316 40%, #050505 100%);
+}
+
+.cosmic-gradient-text {
+  background: linear-gradient(135deg, #FFF3D6 0%, #E6B85C 50%, #7E5BEF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFEAA7 0%, #E6B85C 60%, #B38F3E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #7E5BEF 60%, #4c1d95 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(18, 4, 30, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(230, 184, 92, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(230, 184, 92, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(126, 91, 239, 0.15);
+}
+
+.glass-card-purple {
+  background: rgba(12, 3, 22, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(126, 91, 239, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(230, 184, 92, 0.2);
+}
+
+.purple-glow {
+  box-shadow: 0 0 25px rgba(126, 91, 239, 0.25);
+}
+
+.radial-glow-gold {
+  background: radial-gradient(circle at center, rgba(230, 184, 92, 0.12) 0%, transparent 70%);
+}
+
+.radial-glow-purple {
+  background: radial-gradient(circle at center, rgba(126, 91, 239, 0.15) 0%, transparent 70%);
+}
+
+/* Starfield styling */
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: sparkle infinite;
+}
+
+/* Hide scrollbars but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Sacret geometry drawing helpers */
+.sacred-circle {
+  border: 1px dashed rgba(230, 184, 92, 0.2);
+  border-radius: 50%;
+  position: absolute;
+}
+
